@@ -38,13 +38,43 @@ namespace Experitest
         }
 
         [Test()]
-        public void TestUntitled()
+        public void TestLogin()
         {
             _driver.LaunchApp();
             _driver.FindElement(By.Id("UserNameAID")).SendKeys("user@email.com");
+            _driver.FindElement(By.Id("PasswordAID")).SendKeys("password");
+
             _driver.FindElement(By.Id("LoginButtonAID")).Click();
-            //var text = _driver.FindElement(By.Id("StatusLabelAID")).GetAttribute("text"); // GetProperty Not Implemented yet
-            //Assert.IsNotNull(text);
+            var text = _driver.FindElement(By.Id("StatusLabelAID")).GetAttribute("text"); // GetProperty Not Implemented yet
+
+            Assert.IsNotNull(text);
+            Assert.IsTrue(text.StartsWith("Logging in"));
+        }
+
+        [Test()]
+        public void TestAddItem()
+        {
+            _driver.LaunchApp();
+            _driver.FindElement(By.XPath("//*[@text='BROWSE']")).Click();
+            _driver.FindElement(By.XPath("//*[@text='ADD']")).Click();
+            var itemNameField = _driver.FindElement(By.Id("ItemNameAID"));
+            itemNameField.Clear();
+            itemNameField.SendKeys("todo ");
+
+            var itemDesriptionField = _driver.FindElement(By.Id("ItemDescriptionAID"));
+            itemDesriptionField.Clear();
+            itemDesriptionField.SendKeys("todo description");
+
+            _driver.FindElement(By.XPath("//*[@text='SAVE']")).Click();
+        }
+
+        [Test()]
+        public void TestAbout()
+        {
+            _driver.LaunchApp();
+            //_driver.FindElement(By.XPath("xpath=//*[@contentDescription='LoginButtonAID']")).Click();
+             //element = driver.find_element_by_xpath("//*[@class='android.support.v7.app.ActionBar$Tab'][@index='{tab_ind}']".format(tab_ind = tab_index))
+            _driver.FindElement(By.XPath("//*[@text='ABOUT']")).Click();
         }
 
         [TearDown()]
