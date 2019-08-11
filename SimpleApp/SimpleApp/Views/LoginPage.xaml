@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleApp.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="User name" />
+            <Entry x:Name="UserName" x:Uid="UserNameUid" StyleId="UserNameStyleId" AutomationId="UserNameAID" />
+            <BoxView HeightRequest="10" />
+            <Label Text="Password" />
+            <Entry x:Name="Password" x:Uid="PasswordUid" StyleId="PasswordStyleId" AutomationId="PasswordAID" />
+            <BoxView HeightRequest="10" />
+            <Button x:Name="LoginButton" x:Uid="LoginbuttonUid" StyleId="LoginButtonStyleId" AutomationId="LoginButtonAID" Text="Login" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
