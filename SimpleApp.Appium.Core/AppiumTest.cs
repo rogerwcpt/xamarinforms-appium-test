@@ -40,7 +40,6 @@ namespace SimpleApp.Appium.Core
             appiumDriver.Quit();
         }
 
-
         protected abstract T GetDriver();
         protected abstract void InitAppiumOptions(AppiumOptions appiumOptions);
         protected T appiumDriver;

@@ -18,7 +18,7 @@ namespace SimpleApp.Appium.Core
 
         protected override void InitAppiumOptions(AppiumOptions appiumOptions)
         {
-            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel_2_API_24");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Nexus_5_API_24");
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.Udid, "emulator-5554");
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
             appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "com.companyname.simpleapp");

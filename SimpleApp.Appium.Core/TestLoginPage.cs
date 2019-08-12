@@ -15,11 +15,13 @@ namespace SimpleApp.Appium.Core
 
         protected override T GetDriver()
         {
+            // Implemented by platform specific class
             throw new NotImplementedException();
         }
 
         protected override void InitAppiumOptions(AppiumOptions appiumOptions)
         {
+            // Implemented by platform specific class
             throw new NotImplementedException();
         }
 
@@ -38,18 +40,17 @@ namespace SimpleApp.Appium.Core
             appiumDriver.FindElement(By.Id("PasswordAID")).SendKeys("password");
 
             appiumDriver.FindElement(By.Id("LoginButtonAID")).Click();
-            var text = appiumDriver.FindElement(By.Id("StatusLabelAID")).GetAttribute("text"); // GetProperty Not Implemented yet
+            var text = appiumDriver.FindElement(By.Id("StatusLabelAID")).GetAttribute("text"); // works for iOS (not for android)
 
             Assert.IsNotNull(text);
-            Assert.IsTrue(text.StartsWith("Logging in", StringComparison.CurrentCulture));
+            Assert.IsTrue(text.StartsWith("Logging in", StringComparison.CurrentCulture));  
         }
 
         [Test()]
         public void TestAddItem()
         {
-            appiumDriver.FindElement(By.Id("BrowseTabAID")).Click();
+            appiumDriver.FindElement(By.Id("BrowseTabAID")).Click(); // works for iOS (not for android)
             appiumDriver.FindElement(By.Id("AddToolbarButtonAID")).Click();
-            //appiumDriver.FindElement(By.XPath("//*[@text='ADD']")).Click();  //AddToolbarButtonAID
             var itemNameField = appiumDriver.FindElement(By.Id("ItemNameAID"));
             itemNameField.Clear();
             itemNameField.SendKeys("todo ");
@@ -58,17 +59,14 @@ namespace SimpleApp.Appium.Core
             itemDesriptionField.Clear();
             itemDesriptionField.SendKeys("todo description");
 
-            appiumDriver.FindElement(By.XPath("//*[@text='SAVE']")).Click();
+            appiumDriver.FindElement(By.Id("SaveToolbarButtonAID")).Click();
         }
 
         [Test()]
         public void TestAbout()
         {
-
-            //_driver.FindElement(By.XPath("xpath=//*[@contentDescription='LoginButtonAID']")).Click();
-            //element = driver.find_element_by_xpath("//*[@class='android.support.v7.app.ActionBar$Tab'][@index='{tab_ind}']".format(tab_ind = tab_index))
-            //appiumDriver.FindElement(By.XPath("//*[@text='ABOUT']")).Click();
-            appiumDriver.FindElement(By.Id("AboutTabAID")).Click();
+            appiumDriver.FindElement(By.XPath("//*[@text='ABOUT']")).Click(); // works for Android
+            appiumDriver.FindElement(By.Id("AboutTabAID")).Click(); // works for iOS
         }
     }
 }
