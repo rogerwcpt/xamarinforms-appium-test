@@ -9,7 +9,7 @@
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" AutomationId="AddToolbarButtonAID" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>

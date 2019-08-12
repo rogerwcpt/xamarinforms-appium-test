@@ -8,8 +8,8 @@
              Title="New Item">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" AutomationId="CancelToolbarButtonAID" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" AutomationId="SaveToolbarButtonAID" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
