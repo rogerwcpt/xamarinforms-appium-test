@@ -10,6 +10,8 @@ npm install appium-doctor -g
 
 - run Appium
 
+- Deploy the applications for Android and iOS as per usual from the IDE
+- Take note of the Similator/Emulator names and update the InitAppiumOptions method in TestLoginPage_iOS and TestLoginPage_Droid respectively
 
 
  

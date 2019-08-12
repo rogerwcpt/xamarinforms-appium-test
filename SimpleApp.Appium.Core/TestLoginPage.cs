@@ -40,7 +40,7 @@ namespace SimpleApp.Appium.Core
             appiumDriver.FindElement(By.Id("Password")).SendKeys("password");
 
             appiumDriver.FindElement(By.Id("LoginButton")).Click();
-            var text = appiumDriver.FindElement(By.Id("StatusLabel")).GetAttribute("text"); // works for iOS (not for android)
+            var text = appiumDriver.FindElement(By.Id("StatusLabel")).GetAttribute("value"); // Android is "text"
 
             Assert.IsNotNull(text);
             Assert.IsTrue(text.StartsWith("Logging in", StringComparison.CurrentCulture));  

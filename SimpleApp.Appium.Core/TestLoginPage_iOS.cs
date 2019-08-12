@@ -22,7 +22,7 @@ namespace SimpleApp.Appium.Core
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone 8 Plus");
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "iOS");
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "12.2");
-            appiumOptions.AddAdditionalCapability(MobileCapabilityType.Udid, "EAD887F5-E4B5-462C-9A4C-C32F5D31E58F");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.Udid, "DD98F854-8AEF-489A-9A4A-9BCD0DA078ED");
             appiumOptions.AddAdditionalCapability(IOSMobileCapabilityType.BundleId, "com.companyname.SimpleApp");
         }
     }
