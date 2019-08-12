@@ -33,7 +33,7 @@ namespace SimpleApp.Appium.Core
             appiumDriver = GetDriver();
         }
 
-        [TearDown()]
+        [OneTimeTearDown()]
         public void TearDown()
         {
             // Perform a driver quit so that the report is printed
@@ -45,6 +45,15 @@ namespace SimpleApp.Appium.Core
         protected T appiumDriver;
         protected readonly AppiumOptions appiumOptions;
         protected readonly Uri driverUri;
+
+        public string GetElementText(string elementId)
+        {
+            var element = appiumDriver.FindElement(By.Id(elementId));
+            var attributName = IsAndroid ? "text" : "value";
+            return element.GetAttribute(attributName);
+        }
+
+        public bool IsAndroid => appiumDriver.Capabilities.GetCapability(MobileCapabilityType.PlatformName).Equals("Android");
     }
 
 

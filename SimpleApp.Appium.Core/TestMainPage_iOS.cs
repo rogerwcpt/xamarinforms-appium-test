@@ -6,9 +6,9 @@ using OpenQA.Selenium.Appium.iOS;
 namespace SimpleApp.Appium.Core
 {
     [TestFixture]
-    public class TestLoginPage_iOS: TestLoginPage<IOSDriver<IOSElement>, IOSElement>
+    public class TestMainPage_iOS: TestMainPage<IOSDriver<IOSElement>, IOSElement>
     {
-        public TestLoginPage_iOS(): base("LoginPageTest")
+        public TestMainPage_iOS(): base("LoginPageTest")
         {
         }
 

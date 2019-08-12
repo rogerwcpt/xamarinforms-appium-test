@@ -5,11 +5,11 @@ using OpenQA.Selenium.Appium;
 
 namespace SimpleApp.Appium.Core
 {
-    public class TestLoginPage<T, W>: AppiumTest<T, W>
+    public class TestMainPage<T, W>: AppiumTest<T, W>
         where T : AppiumDriver<W>
         where W : IWebElement
     {
-        public TestLoginPage(string testName): base(testName)
+        public TestMainPage(string testName): base(testName)
         {
         }
 
@@ -28,19 +28,19 @@ namespace SimpleApp.Appium.Core
         [SetUp()]
         public void SetupTest()
         {
-            appiumDriver.CloseApp();
-            appiumDriver.LaunchApp();
+            //appiumDriver.CloseApp();
+            //appiumDriver.LaunchApp();
         }
 
         [Test()]
         public void TestLogin()
         {
-            //appiumDriver.FindElement(By.Id("Login")).Click();
+            appiumDriver.FindElement(By.Id("Login")).Click();
             appiumDriver.FindElement(By.Id("UserName")).SendKeys("user@email.com");
             appiumDriver.FindElement(By.Id("Password")).SendKeys("password");
 
             appiumDriver.FindElement(By.Id("LoginButton")).Click();
-            var text = appiumDriver.FindElement(By.Id("StatusLabel")).GetAttribute("value"); // Android is "text"
+            var text = GetElementText("StatusLabel"); // Android is "text"
 
             Assert.IsNotNull(text);
             Assert.IsTrue(text.StartsWith("Logging in", StringComparison.CurrentCulture));  
@@ -49,14 +49,12 @@ namespace SimpleApp.Appium.Core
         [Test()]
         public void TestAddItem()
         {
-            appiumDriver.FindElement(By.Id("Browse")).Click(); // works for iOS (not for android)
+            appiumDriver.FindElement(By.Id("Browse")).Click();
             appiumDriver.FindElement(By.Id("AddToolbarItem")).Click();
             var itemNameField = appiumDriver.FindElement(By.Id("ItemNameEntry"));
-            itemNameField.Clear();
-            itemNameField.SendKeys("todo ");
+            itemNameField.SendKeys("todo");
 
             var itemDesriptionField = appiumDriver.FindElement(By.Id("ItemDescriptionEntry"));
-            itemDesriptionField.Clear();
             itemDesriptionField.SendKeys("todo description");
 
             appiumDriver.FindElement(By.Id("SaveToolbarItem")).Click();

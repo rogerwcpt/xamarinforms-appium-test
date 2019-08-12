@@ -7,9 +7,9 @@ using OpenQA.Selenium.Appium.Enums;
 namespace SimpleApp.Appium.Core
 {
     [TestFixture]
-    public class TestLoginPage_Droid: TestLoginPage<AndroidDriver<AndroidElement>, AndroidElement>
+    public class TestMainPage_Droid: TestMainPage<AndroidDriver<AndroidElement>, AndroidElement>
     {
-        public TestLoginPage_Droid() : base("LoginPageTest") {}
+        public TestMainPage_Droid() : base("LoginPageTest") {}
 
         protected override AndroidDriver<AndroidElement> GetDriver()
         {
