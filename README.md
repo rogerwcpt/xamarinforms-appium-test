@@ -1,7 +1,14 @@
 # Xamarin Forms with Appium UI Test Automation
 
-Using C# and Appium, this project attempts to automate UI testing, with a Single code base in mind.
+Using C# and Appium, this project attempts to automate UI testing of a Xamarin Forms App, with a single test code base in mind.
+The beauty of using C# is that you can use the same Visual Studio IDE and obviuosly the power of C# in your UI Tests.
 
+This is a work in progress:
+
+## Roadmap ##
+
+- Compare this with a Java based Appium Test against the same Simple App
+- Compare with a Xamarin based UI Test
 
 ## Steps ## 
 
