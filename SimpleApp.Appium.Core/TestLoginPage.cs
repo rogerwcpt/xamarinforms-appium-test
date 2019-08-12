@@ -35,12 +35,12 @@ namespace SimpleApp.Appium.Core
         [Test()]
         public void TestLogin()
         {
-            appiumDriver.FindElement(By.Id("LoginTabAID")).Click();
-            appiumDriver.FindElement(By.Id("UserNameAID")).SendKeys("user@email.com");
-            appiumDriver.FindElement(By.Id("PasswordAID")).SendKeys("password");
+            //appiumDriver.FindElement(By.Id("Login")).Click();
+            appiumDriver.FindElement(By.Id("UserName")).SendKeys("user@email.com");
+            appiumDriver.FindElement(By.Id("Password")).SendKeys("password");
 
-            appiumDriver.FindElement(By.Id("LoginButtonAID")).Click();
-            var text = appiumDriver.FindElement(By.Id("StatusLabelAID")).GetAttribute("text"); // works for iOS (not for android)
+            appiumDriver.FindElement(By.Id("LoginButton")).Click();
+            var text = appiumDriver.FindElement(By.Id("StatusLabel")).GetAttribute("text"); // works for iOS (not for android)
 
             Assert.IsNotNull(text);
             Assert.IsTrue(text.StartsWith("Logging in", StringComparison.CurrentCulture));  
@@ -49,24 +49,23 @@ namespace SimpleApp.Appium.Core
         [Test()]
         public void TestAddItem()
         {
-            appiumDriver.FindElement(By.Id("BrowseTabAID")).Click(); // works for iOS (not for android)
-            appiumDriver.FindElement(By.Id("AddToolbarButtonAID")).Click();
-            var itemNameField = appiumDriver.FindElement(By.Id("ItemNameAID"));
+            appiumDriver.FindElement(By.Id("Browse")).Click(); // works for iOS (not for android)
+            appiumDriver.FindElement(By.Id("AddToolbarItem")).Click();
+            var itemNameField = appiumDriver.FindElement(By.Id("ItemNameEntry"));
             itemNameField.Clear();
             itemNameField.SendKeys("todo ");
 
-            var itemDesriptionField = appiumDriver.FindElement(By.Id("ItemDescriptionAID"));
+            var itemDesriptionField = appiumDriver.FindElement(By.Id("ItemDescriptionEntry"));
             itemDesriptionField.Clear();
             itemDesriptionField.SendKeys("todo description");
 
-            appiumDriver.FindElement(By.Id("SaveToolbarButtonAID")).Click();
+            appiumDriver.FindElement(By.Id("SaveToolbarItem")).Click();
         }
 
         [Test()]
         public void TestAbout()
         {
-            appiumDriver.FindElement(By.XPath("//*[@text='ABOUT']")).Click(); // works for Android
-            appiumDriver.FindElement(By.Id("AboutTabAID")).Click(); // works for iOS
+            appiumDriver.FindElement(By.Id("About")).Click(); // works for iOS
         }
     }
 }

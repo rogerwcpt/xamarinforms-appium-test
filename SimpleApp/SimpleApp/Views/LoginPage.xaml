@@ -8,13 +8,13 @@
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Label Text="User name" />
-            <Entry x:Name="UserName" AutomationId="UserNameAID" />
+            <Entry x:Name="UserName" AutomationId="UserName" />
             <BoxView HeightRequest="10" />
             <Label Text="Password" />
-            <Entry x:Name="Password"  AutomationId="PasswordAID" />
+            <Entry x:Name="Password"  AutomationId="Password" />
             <BoxView HeightRequest="10" />
-            <Button x:Name="LoginButton" AutomationId="LoginButtonAID" Text="Login" Clicked="LoginButton_Clicked" />
-            <Label x:Name="StatusLabel" AutomationId="StatusLabelAID" />
+            <Button x:Name="LoginButton" AutomationId="LoginButton" Text="Login" Clicked="LoginButton_Clicked" />
+            <Label x:Name="StatusLabel" AutomationId="StatusLabel" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
