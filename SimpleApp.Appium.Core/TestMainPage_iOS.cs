@@ -8,7 +8,7 @@ namespace SimpleApp.Appium.Core
     [TestFixture]
     public class TestMainPage_iOS: TestMainPage<IOSDriver<IOSElement>, IOSElement>
     {
-        public TestMainPage_iOS(): base("LoginPageTest")
+        public TestMainPage_iOS(): base("MainPageTests")
         {
         }
 

@@ -1,5 +1,4 @@
-﻿//package <set your test package>;
-using System;
+﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;

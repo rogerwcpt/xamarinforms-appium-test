@@ -9,7 +9,7 @@ namespace SimpleApp.Appium.Core
     [TestFixture]
     public class TestMainPage_Droid: TestMainPage<AndroidDriver<AndroidElement>, AndroidElement>
     {
-        public TestMainPage_Droid() : base("LoginPageTest") {}
+        public TestMainPage_Droid() : base("MainPageTests") {}
 
         protected override AndroidDriver<AndroidElement> GetDriver()
         {
