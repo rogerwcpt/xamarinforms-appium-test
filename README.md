@@ -1,5 +1,7 @@
 # xamarinforms-appium-test
 
+Using C# and Appium, this project attempts to automate UI testing, with a Single code base in mind.
+
 - Install Appium Doctor
 
 ```
